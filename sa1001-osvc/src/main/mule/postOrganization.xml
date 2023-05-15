@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:request-config name="HTTP_Request_configuration" doc:name="HTTP Request configuration" doc:id="c65da088-8f5d-4f9a-ac04-1e73510e8be2" basePath="/api/osvc/v1.4" >
+		<http:request-connection host="osvccloudconnection.us-e2.cloudhub.io" port="80" />
+	</http:request-config>
+	<sub-flow name="postOrganizationSubFlow" doc:id="8312bb0b-272b-41c4-8734-5793d0515b62" >
+		<logger level="INFO" doc:name="Info: Flow started " doc:id="fd7e40ff-2347-49ed-8345-1e9737f72686" />
+		<http:request method="POST" doc:name="postOrganizationRequest" doc:id="22c3569a-0f8c-4c67-80bc-9d0324a87778" doc:description="This is request to create Organization in to osvc " config-ref="HTTP_Request_configuration" path="/organization"/>
+		<logger level="INFO" doc:name="Info: Flow ended" doc:id="a357c909-5cca-4239-b253-ade45f516da7" />
+	</sub-flow>
+</mule>

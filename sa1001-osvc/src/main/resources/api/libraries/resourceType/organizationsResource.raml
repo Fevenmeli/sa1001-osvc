@@ -1,0 +1,15 @@
+#%RAML 1.0 ResourceType
+post:
+    is:
+      - Client_Credential
+    body:
+      application/json:
+        type: postOrganizationsRequestdataType
+        
+          
+    responses:
+      201:
+        body:
+          application/json:
+            type: postOrganizationsResponsedataType
+           

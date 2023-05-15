@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: sa1001-osvc System API 
+mediaType: 
+- application/json
+protocols:
+  - HTTP
+version: v1
+description: system API interacting with OSVC using REST
+#Change log 
+# Post Organizations creataed  by Belay Moreda on 14/05/2023 #Cignis-May2023
+ 
+traits:
+  Client_Credential: !include libraries/Traits/Client_Credential.raml
+resourceTypes:
+  organizationsResource: !include libraries/resourceType/organizationsResource.raml
+types:
+  postOrganizationsRequestdataType: !include libraries/dataType/postOrganizationsRequestdataType.raml
+  postOrganizationsResponsedataType: !include libraries/dataType/postOrganizationsResponsedataType.raml
+
+/organizations:
+  type:
+    organizationsResource
+  
+              
+          
+
+  
+      
+          
+    
