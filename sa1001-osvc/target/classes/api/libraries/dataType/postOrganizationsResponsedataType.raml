@@ -1,0 +1,17 @@
+#%RAML 1.0 DataType
+type: object
+properties:
+  orgName: 
+   type: string
+   required: false
+  sfdcId:
+    type: number
+    required: false
+  message:
+    type: string
+    required: false
+  code:
+    type: number
+    required: false
+example:
+  !include /example/response/postOrganizationsResponse.json
